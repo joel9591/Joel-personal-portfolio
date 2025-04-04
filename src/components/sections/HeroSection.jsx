@@ -6,18 +6,18 @@ export default function HeroSection() {
   const [transform, setTransform] = useState({
     rotateX: 0,
     rotateY: 0,
-    scale: 1
+    scale: 1,
   });
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - left) / width - 0.5;
     const y = (e.clientY - top) / height - 0.5;
-    
+
     setTransform({
       rotateX: y * 10,
       rotateY: -x * 10,
-      scale: 1.05
+      scale: 1.05,
     });
   };
 
@@ -25,7 +25,7 @@ export default function HeroSection() {
     setTransform({
       rotateX: 0,
       rotateY: 0,
-      scale: 1
+      scale: 1,
     });
   };
 
@@ -49,14 +49,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6 z-10"
+          className="z-10 flex flex-col items-center space-y-6 text-center lg:items-start lg:text-left"
         >
           <div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg md:text-xl text-primary mb-2"
+              className="mb-2 text-lg text-primary md:text-xl"
             >
               Hey, I'm <span className="font-semibold">Joel J</span> 👋
             </motion.p>
@@ -72,16 +72,17 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-4 text-xl text-muted-foreground max-w-[600px]"
+              className="mt-4 max-w-[600px] text-xl text-muted-foreground"
             >
-              Dynamic and results-driven Full Stack Software Developer with expertise in React.js, JavaScript, Node.js, Python and more.
+              Dynamic and results-driven Full Stack Software Developer with expertise in React.js,
+              JavaScript, Node.js, Python and more.
             </motion.p>
           </div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-wrap gap-4 justify-center lg:justify-start"
+            className="flex flex-wrap justify-center gap-4 lg:justify-start"
           >
             <Button size="lg" asChild>
               <a href="#contact">Get in Touch</a>
@@ -89,12 +90,7 @@ export default function HeroSection() {
             <Button size="lg" variant="outline" asChild>
               <a href="#projects">View Projects</a>
             </Button>
-            <Button 
-              size="lg" 
-              variant="secondary"
-              onClick={handleDownloadResume}
-              className="group"
-            >
+            <Button size="lg" variant="secondary" onClick={handleDownloadResume} className="group">
               Download Resume
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,48 +112,43 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        
         <div className="relative h-[350px] w-[350px] md:h-[450px] md:w-[450px] lg:h-[500px] lg:w-[500px]">
-          <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl group-hover:bg-primary/30 transition-all duration-500"></div>
-          
+          <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl transition-all duration-500 group-hover:bg-primary/30"></div>
+
           <motion.div
-            className="relative h-full w-full rounded-full overflow-hidden shadow-2xl cursor-pointer"
+            className="relative h-full w-full cursor-pointer overflow-hidden rounded-full shadow-2xl"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{
               transform: `perspective(1000px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg) scale(${transform.scale})`,
               transformStyle: "preserve-3d",
-              transition: "transform 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67)"
+              transition: "transform 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67)",
             }}
             whileHover={{ scale: 1.05 }}
           >
             <img
-              src="/images/HeroImage.jpg"
+              src="/images/joel-j1.jpg"
               alt="Joel J - Full Stack Developer"
               width={500}
               height={500}
               className="h-full w-full object-cover"
               style={{
                 transform: "translateZ(50px)",
-                transition: "transform 0.5s ease-out"
+                transition: "transform 0.5s ease-out",
+                objectPosition: "top center",
               }}
             />
-            
-           
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
           </motion.div>
-          
-          
-          <div className="absolute -top-6 -right-6 h-12 w-12 rounded-full bg-primary/20 blur-md group-hover:bg-primary/30 transition-all duration-500"></div>
-          <div className="absolute -bottom-6 -left-6 h-16 w-16 rounded-full bg-primary/10 blur-md group-hover:bg-primary/20 transition-all duration-700"></div>
+
+          <div className="absolute -right-6 -top-6 h-12 w-12 rounded-full bg-primary/20 blur-md transition-all duration-500 group-hover:bg-primary/30"></div>
+          <div className="absolute -bottom-6 -left-6 h-16 w-16 rounded-full bg-primary/10 blur-md transition-all duration-700 group-hover:bg-primary/20"></div>
         </div>
       </div>
 
-      
-      <div className="absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[100px]" />
+      <div className="absolute -right-20 -top-40 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[100px]" />
       <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[100px]" />
     </section>
   );
 }
-
-

@@ -18,23 +18,10 @@ const skills = {
     "Responsive Design",
     "Mobile-first Design",
   ],
-  backend: [
-    "Node.js",
-    "Express.js",
-    "RESTful APIs",
-    "Client-Server Integration",
-  ],
+  backend: ["Node.js", "Express.js", "RESTful APIs", "Client-Server Integration"],
   languages: ["JavaScript (ES6+)", "Python"],
-  tools: [
-    "Git",
-    "GitHub",
-    "VS Code",
-    "Cursor AI",
-    "Jest",
-    "React Testing Library",
-    "Postman API",
-  ],
-  database: ["MySQL", "MongoDB"]
+  tools: ["Git", "GitHub", "VS Code", "Cursor AI", "Jest", "React Testing Library", "Postman API"],
+  database: ["MySQL", "MongoDB"],
 };
 
 export default function SkillsSection() {
@@ -46,15 +33,15 @@ export default function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight">
             Technical <span className="text-primary">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8 rounded-full" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            My technical toolkit includes a diverse range of technologies and frameworks
-            that enable me to build comprehensive full-stack applications.
+          <div className="mx-auto mb-8 h-1 w-20 rounded-full bg-primary" />
+          <p className="mx-auto max-w-2xl text-muted-foreground">
+            My technical toolkit includes a diverse range of technologies and frameworks that enable
+            me to build comprehensive full-stack applications.
           </p>
         </motion.div>
 
@@ -65,20 +52,42 @@ export default function SkillsSection() {
           viewport={{ once: true }}
         >
           <Tabs defaultValue="frontend" className="w-full">
-            <div className="flex justify-center mb-8">
-              <TabsList className="grid w-full max-w-4xl grid-cols-5">
-                <TabsTrigger value="frontend">Frontend</TabsTrigger>
-                <TabsTrigger value="backend">Backend</TabsTrigger>
-                <TabsTrigger value="database">Database</TabsTrigger>
-                <TabsTrigger value="languages">Programming Languages</TabsTrigger>
-                <TabsTrigger value="tools">Tools</TabsTrigger>
+            <div className="mb-8 flex justify-center">
+              <TabsList className="flex max-w-4xl flex-wrap justify-center gap-2">
+                <TabsTrigger
+                  value="frontend"
+                  className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                >
+                  Frontend
+                </TabsTrigger>
+                <TabsTrigger
+                  value="backend"
+                  className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                >
+                  Backend
+                </TabsTrigger>
+                <TabsTrigger
+                  value="database"
+                  className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                >
+                  Database
+                </TabsTrigger>
+                <TabsTrigger
+                  value="languages"
+                  className="whitespace-nowrap px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                >
+                  Languages
+                </TabsTrigger>
+                <TabsTrigger value="tools" className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2">
+                  Tools
+                </TabsTrigger>
               </TabsList>
             </div>
 
             <Card>
               <CardContent className="p-6">
                 <TabsContent value="frontend" className="mt-0">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                     {skills.frontend.map((skill) => (
                       <SkillBadge key={skill} name={skill} />
                     ))}
@@ -86,7 +95,7 @@ export default function SkillsSection() {
                 </TabsContent>
 
                 <TabsContent value="backend" className="mt-0">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                     {skills.backend.map((skill) => (
                       <SkillBadge key={skill} name={skill} />
                     ))}
@@ -94,7 +103,7 @@ export default function SkillsSection() {
                 </TabsContent>
 
                 <TabsContent value="database" className="mt-0">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                     {skills.database.map((skill) => (
                       <SkillBadge key={skill} name={skill} />
                     ))}
@@ -102,7 +111,7 @@ export default function SkillsSection() {
                 </TabsContent>
 
                 <TabsContent value="languages" className="mt-0">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                     {skills.languages.map((skill) => (
                       <SkillBadge key={skill} name={skill} />
                     ))}
@@ -110,7 +119,7 @@ export default function SkillsSection() {
                 </TabsContent>
 
                 <TabsContent value="tools" className="mt-0">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
                     {skills.tools.map((skill) => (
                       <SkillBadge key={skill} name={skill} />
                     ))}

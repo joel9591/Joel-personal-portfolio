@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  HoverCard, HoverCardContent, HoverCardTrigger
-} from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons";
 
 const projects = [
@@ -27,30 +30,32 @@ const projects = [
       "/projects/EmployeeMS/employee_login.png",
       "/projects/EmployeeMS/employee_profile.png",
       "/projects/EmployeeMS/landing_page.png",
-      "/projects/EmployeeMS/signup_page.png"
+      "/projects/EmployeeMS/signup_page.png",
     ],
     accomplishments: [
       "Full-Stack Development: Built a comprehensive Employee Management System using React for the frontend and Node.js, Express for the backend, ensuring seamless user experience and functionality.",
       "Database Integration: Utilized MySQL for robust data management, integrated with Railway database and mySQL Workbench, enabling efficient storage and retrieval of employee information.",
-      "Role-Based Access & Real-Time Updates: Implemented role-based access control, allowing secure user authentication, and incorporated real-time updates for employee data management."
+      "Role-Based Access & Real-Time Updates: Implemented role-based access control, allowing secure user authentication, and incorporated real-time updates for employee data management.",
     ],
     demoLink: "#",
-    codeLink: "https://github.com/joel9591/EMS-local-dev"
+    hasLiveDemo: false,
+    codeLink: "https://github.com/joel9591/EMS-local-dev",
   },
   {
     title: "Loan Prediction",
     description: "Machine learning model to predict loan approval based on applicant data.",
     technologies: ["Python", "Numpy", "Pandas", "matplotlib", "seaborn", "scikit-learn"],
-    images: ["/projects/loan-prediction/loan-prediction.png"], 
+    images: ["/projects/loan-prediction/loan-prediction.png"],
     accomplishments: [
       "Developed and deployed a machine learning model using Logistic Regression to predict loan approval based on applicant details.",
       "Performed extensive data preprocessing, including handling missing values, encoding categorical variables, and normalizing data for improved model accuracy.",
       "Implemented exploratory data analysis (EDA) using Seaborn and Matplotlib, visualizing trends in gender, marital status, self-employment, and property area affecting loan approval.",
-      "Achieved high model accuracy through effective feature selection and training-testing split, enhancing predictive performance on real-world loan application data."
+      "Achieved high model accuracy through effective feature selection and training-testing split, enhancing predictive performance on real-world loan application data.",
     ],
     demoLink: "#",
-    codeLink: "https://github.com/joel9591/loan-prediction"
-  }
+    hasLiveDemo: false,
+    codeLink: "https://github.com/joel9591/loan-prediction",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -62,9 +67,9 @@ export default function ProjectsSection() {
         prev.map((currentIndex, i) => {
           const totalImages = projects[i].images.length;
           return (currentIndex + 1) % totalImages;
-        })
+        }),
       );
-    }, 5000); 
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -76,36 +81,39 @@ export default function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8 rounded-full" />
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my technical skills through real-world software engineering and data science projects.
+          <div className="mx-auto mb-8 h-1 w-20 rounded-full bg-primary" />
+          <p className="mx-auto max-w-2xl text-muted-foreground">
+            A showcase of my technical skills through real-world software engineering and data
+            science projects.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, i) => (
             <Card key={i} className="overflow-hidden shadow-lg">
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
-                <CardDescription >{project.description}</CardDescription>
+                <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <img
                 src={project.images[imageIndices[i]]}
                 alt={`${project.title} screenshot`}
-                className="w-full h-auto object-cover transition-opacity duration-500"
+                className="h-auto w-full object-cover transition-opacity duration-500"
               />
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4 mt-1">
+                <div className="mb-4 mt-1 flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary">{tech}</Badge>
+                    <Badge key={index} variant="secondary">
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
-                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <ul className="list-inside list-disc space-y-2 text-sm text-muted-foreground">
                   {project.accomplishments.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
@@ -114,31 +122,43 @@ export default function ProjectsSection() {
               <CardFooter className="flex justify-between">
                 <HoverCard>
                   <HoverCardTrigger asChild>
-                  <a href={project.codeLink}>
-                    <Button variant="outline">
-                      <GitHubLogoIcon className="mr-2" />
+                    <a href={project.codeLink}>
+                      <Button variant="outline">
+                        <GitHubLogoIcon className="mr-2" />
                         Code
-                    </Button>
-                  </a>
-                    
-                      
-                      
+                      </Button>
+                    </a>
                   </HoverCardTrigger>
                   <HoverCardContent>
                     <p>View the GitHub repository for this project.</p>
                   </HoverCardContent>
                 </HoverCard>
-                <HoverCard>
+                {/* <HoverCard>
                   <HoverCardTrigger asChild>
-                    <Button>
-                      <GlobeIcon className="mr-2" />
+                    <Button >
+                      <GlobeIcon className="mr-2"/>
                       Live Demo
                     </Button>
                   </HoverCardTrigger>
                   <HoverCardContent>
                     <p>See the deployed project in action.</p>
                   </HoverCardContent>
-                </HoverCard>
+                </HoverCard> */}
+                {project.hasLiveDemo && (
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <Button asChild>
+                        <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer">
+                          <GlobeIcon className="mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    </HoverCardTrigger>
+                    <HoverCardContent>
+                      <p>See the deployed project in action</p>
+                    </HoverCardContent>
+                  </HoverCard>
+                )}
               </CardFooter>
             </Card>
           ))}
