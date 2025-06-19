@@ -15,6 +15,50 @@ import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons";
 
 const projects = [
   {
+    title: "Thanvi Realty | Realestate website",
+    description:
+      "A fully responsive real estate website built for Thanvi Realty, showcasing premium properties, services, and contact channels across Bangalore, Hyderabad, and Vizag.",
+    technologies: ["React.js", "emailjs", "radix-ui", "tailwindcss", "Zod"],
+    images: [
+      "/projects/Thanvirealty/hero.png",
+      "/projects/Thanvirealty/about.png",
+      "/projects/Thanvirealty/img.png",
+      "/projects/Thanvirealty/img1.png",
+      "/projects/Thanvirealty/img2.png",
+      "/projects/Thanvirealty/img3.png",
+      "/projects/Thanvirealty/img4.png",
+      "/projects/Thanvirealty/services.png",
+      "/projects/Thanvirealty/services1.png",
+    ],
+    accomplishments: [
+      "Developed a multi-page, mobile-friendly website for Thanvi Realty, a South India-based real estate firm under Thanvi Buildtech.",
+      "Implemented sections for Premium Plots, Luxury Villas, Apartments, Investment Lands, and Exclusive Projects using modular layout design.",
+      "Created structured service pages detailing plot development, land acquisition, construction, and investment guidance offerings.",
+      "Added informative content blocks for amenities like gated communities, green zones, and fitness centers, with visual emphasis on lifestyle features.",
+      "Built a dynamic contact section including lead forms and location details to facilitate direct engagement.",
+      "Emphasized SEO-friendly structure, semantic markup, and easy navigation for high conversion and discoverability.",
+      "Collaborated closely with the client to ensure branding, colors, and layout aligned with business goals and real estate trustworthiness.",
+    ],
+    demoLink: "https://www.thanvirealty.in/",
+    hasLiveDemo: true,
+    codeLink: "https://github.com/joel9591/Thanvirealty.in",
+  },
+  {
+    title: "Loan Prediction",
+    description: "Machine learning model to predict loan approval based on applicant data.",
+    technologies: ["Python", "Numpy", "Pandas", "matplotlib", "seaborn", "scikit-learn"],
+    images: ["/projects/loan-prediction/loan-prediction.png"],
+    accomplishments: [
+      "Developed and deployed a machine learning model using Logistic Regression to predict loan approval based on applicant details.",
+      "Performed extensive data preprocessing, including handling missing values, encoding categorical variables, and normalizing data for improved model accuracy.",
+      "Implemented exploratory data analysis (EDA) using Seaborn and Matplotlib, visualizing trends in gender, marital status, self-employment, and property area affecting loan approval.",
+      "Achieved high model accuracy through effective feature selection and training-testing split, enhancing predictive performance on real-world loan application data.",
+    ],
+    demoLink: "#",
+    hasLiveDemo: false,
+    codeLink: "https://github.com/joel9591/loan-prediction",
+  },
+  {
     title: "Employee Management System",
     description: "A comprehensive employee management solution with role-based access control.",
     technologies: ["React.js", "Node.js", "MySQL", "Express", "OAuth", "JWT"],
@@ -40,21 +84,6 @@ const projects = [
     demoLink: "#",
     hasLiveDemo: false,
     codeLink: "https://github.com/joel9591/EMS-local-dev",
-  },
-  {
-    title: "Loan Prediction",
-    description: "Machine learning model to predict loan approval based on applicant data.",
-    technologies: ["Python", "Numpy", "Pandas", "matplotlib", "seaborn", "scikit-learn"],
-    images: ["/projects/loan-prediction/loan-prediction.png"],
-    accomplishments: [
-      "Developed and deployed a machine learning model using Logistic Regression to predict loan approval based on applicant details.",
-      "Performed extensive data preprocessing, including handling missing values, encoding categorical variables, and normalizing data for improved model accuracy.",
-      "Implemented exploratory data analysis (EDA) using Seaborn and Matplotlib, visualizing trends in gender, marital status, self-employment, and property area affecting loan approval.",
-      "Achieved high model accuracy through effective feature selection and training-testing split, enhancing predictive performance on real-world loan application data.",
-    ],
-    demoLink: "#",
-    hasLiveDemo: false,
-    codeLink: "https://github.com/joel9591/loan-prediction",
   },
 ];
 
@@ -148,7 +177,7 @@ export default function ProjectsSection() {
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <Button asChild>
-                        <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer">
+                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
                           <GlobeIcon className="mr-2" />
                           Live Demo
                         </a>

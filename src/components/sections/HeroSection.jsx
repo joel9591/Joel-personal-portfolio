@@ -30,7 +30,7 @@ export default function HeroSection() {
   };
 
   const handleDownloadResume = () => {
-    const resumeUrl = "/resume/Joel_2exp_Full_Stack_Developer.pdf";
+    const resumeUrl = "/resume/Joel-fullStackDev.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Joel_resume.pdf";
@@ -90,7 +90,12 @@ export default function HeroSection() {
             <Button size="lg" variant="outline" asChild>
               <a href="#projects">View Projects</a>
             </Button>
-            <Button size="lg" variant="secondary" onClick={handleDownloadResume} className="group">
+            <Button
+              size="md"
+              variant="secondary"
+              onClick={handleDownloadResume}
+              className="group px-2"
+            >
               Download Resume
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -108,6 +113,11 @@ export default function HeroSection() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" x2="12" y1="15" y2="3" />
               </svg>
+            </Button>
+            <Button size="lg">
+              <a href="https://drive.google.com/file/d/1QN82Y_BP-ZZmqFbe46nLqvsFE3VtjCWP/view?usp=drive_link">
+                View Resume
+              </a>
             </Button>
           </motion.div>
         </motion.div>
