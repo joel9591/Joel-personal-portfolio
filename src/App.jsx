@@ -7,12 +7,13 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import CertificationsSection from "@/components/sections/CertificationsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import { Toaster } from "sonner";
+import {Helmet} from "react-helmet";
 
 function App() {
   return (
     <>
     <Helmet>
-        <title>Joel J | Full Stack Developer Portfolio</title>
+        <title>Joel J | Full Stack Developer </title>
         <meta
           name="description"
           content="Joel J is a full stack software developer skilled in React.js, Node.js, JavaScript, Python, and modern web technologies. Explore his work and get in touch."
