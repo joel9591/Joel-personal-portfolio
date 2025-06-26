@@ -20,7 +20,7 @@ function App() {
         />
         <meta
           name="keywords"
-          content="Joel J, hey Joel, Joel portfolio, full stack developer, React developer, portfolio website, web developer Bangalore"
+          content="Joel J, hey Joel, Joel portfolio, full stack developer, React developer, portfolio website, web developer Bangalore, joel j, Joel, Software Engineer"
         />
         <meta name="author" content="Joel J" />
         <meta name="robots" content="index, follow" />

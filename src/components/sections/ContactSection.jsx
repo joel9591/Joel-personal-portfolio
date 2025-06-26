@@ -11,6 +11,7 @@ import {
   LinkedInLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import { Helmet } from "react-helmet";
 
 export default function ContactSection() {
   const form = useRef();
@@ -41,6 +42,38 @@ export default function ContactSection() {
   };
 
   return (
+    <>
+        <Helmet>
+            <title>Joel J | Full Stack Developer </title>
+            <meta
+              name="description"
+              content="Joel J is a full stack software developer skilled in React.js, Node.js, JavaScript, Python, and modern web technologies. Explore his work and get in touch."
+            />
+            <meta
+              content="Joel J, hey Joel, Joel portfolio, full stack developer, React developer, portfolio website, web developer Bangalore, joel j, Joel, Software Engineer"
+            />
+            <meta name="author" content="Joel J" />
+            <meta name="robots" content="index, follow" />
+    
+            {/* Open Graph (for Facebook & LinkedIn) */}
+            <meta property="og:title" content="Joel J | Full Stack Developer Portfolio" />
+            <meta
+              property="og:description"
+              content="Explore the work of Joel J — a skilled React and Node.js full stack developer."
+            />
+            <meta property="og:url" content="https://heyjoel.vercel.app/" />
+            <meta property="og:type" content="website" />
+            <meta property="og:image" content="https://heyjoel.vercel.app/images/joel-j1.jpg" />
+    
+            {/* Twitter Card */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Joel J | Full Stack Developer Portfolio" />
+            <meta
+              name="twitter:description"
+              content="Dynamic and results-driven full stack software developer. Explore my portfolio."
+            />
+            <meta name="twitter:image" content="https://heyjoel.vercel.app/images/joel-j1.jpg" />
+          </Helmet>
     <section id="contact" className="py-20">
       <div className="container">
         <motion.div
@@ -228,5 +261,6 @@ export default function ContactSection() {
         />
       </div>
     </section>
+    </>
   );
 }

@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons";
+import { Helmet } from "react-helmet";
 
 const projects = [
   {
@@ -103,66 +104,99 @@ export default function ProjectsSection() {
   }, []);
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <h2 className="mb-4 text-3xl font-bold tracking-tight">
-            Featured <span className="text-primary">Projects</span>
-          </h2>
-          <div className="mx-auto mb-8 h-1 w-20 rounded-full bg-primary" />
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            A showcase of my technical skills through real-world software engineering and data
-            science projects.
-          </p>
-        </motion.div>
+    <>
+      <Helmet>
+        <title>Joel J | Full Stack Developer </title>
+        <meta
+          name="description"
+          content="Joel J is a full stack software developer skilled in React.js, Node.js, JavaScript, Python, and modern web technologies. Explore his work and get in touch."
+        />
+        <meta
+          name="keywords"
+          content="Joel J, hey Joel, Joel portfolio, full stack developer, React developer, portfolio website, web developer Bangalore, joel j, Joel, Software Engineer"
+        />
+        <meta name="author" content="Joel J" />
+        <meta name="robots" content="index, follow" />
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, i) => (
-            <Card key={i} className="overflow-hidden shadow-lg">
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <img
-                src={project.images[imageIndices[i]]}
-                alt={`${project.title} screenshot`}
-                className="h-auto w-full object-cover transition-opacity duration-500"
-              />
-              <CardContent>
-                <div className="mb-4 mt-1 flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <ul className="list-inside list-disc space-y-2 text-sm text-muted-foreground">
-                  {project.accomplishments.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <a href={project.codeLink}>
-                      <Button variant="outline">
-                        <GitHubLogoIcon className="mr-2" />
-                        Code
-                      </Button>
-                    </a>
-                  </HoverCardTrigger>
-                  <HoverCardContent>
-                    <p>View the GitHub repository for this project.</p>
-                  </HoverCardContent>
-                </HoverCard>
-                {/* <HoverCard>
+        {/* Open Graph (for Facebook & LinkedIn) */}
+        <meta property="og:title" content="Joel J | Full Stack Developer Portfolio" />
+        <meta
+          property="og:description"
+          content="Explore the work of Joel J — a skilled React and Node.js full stack developer."
+        />
+        <meta property="og:url" content="https://heyjoel.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://heyjoel.vercel.app/images/joel-j1.jpg" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Joel J | Full Stack Developer Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Dynamic and results-driven full stack software developer. Explore my portfolio."
+        />
+        <meta name="twitter:image" content="https://heyjoel.vercel.app/images/joel-j1.jpg" />
+      </Helmet>
+      <section id="projects" className="py-20">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-12 text-center"
+          >
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">
+              Featured <span className="text-primary">Projects</span>
+            </h2>
+            <div className="mx-auto mb-8 h-1 w-20 rounded-full bg-primary" />
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              A showcase of my technical skills through real-world software engineering and data
+              science projects.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {projects.map((project, i) => (
+              <Card key={i} className="overflow-hidden shadow-lg">
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <img
+                  src={project.images[imageIndices[i]]}
+                  alt={`${project.title} screenshot`}
+                  className="h-auto w-full object-cover transition-opacity duration-500"
+                />
+                <CardContent>
+                  <div className="mb-4 mt-1 flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <Badge key={index} variant="secondary">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <ul className="list-inside list-disc space-y-2 text-sm text-muted-foreground">
+                    {project.accomplishments.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <a href={project.codeLink}>
+                        <Button variant="outline">
+                          <GitHubLogoIcon className="mr-2" />
+                          Code
+                        </Button>
+                      </a>
+                    </HoverCardTrigger>
+                    <HoverCardContent>
+                      <p>View the GitHub repository for this project.</p>
+                    </HoverCardContent>
+                  </HoverCard>
+                  {/* <HoverCard>
                   <HoverCardTrigger asChild>
                     <Button >
                       <GlobeIcon className="mr-2"/>
@@ -173,26 +207,27 @@ export default function ProjectsSection() {
                     <p>See the deployed project in action.</p>
                   </HoverCardContent>
                 </HoverCard> */}
-                {project.hasLiveDemo && (
-                  <HoverCard>
-                    <HoverCardTrigger asChild>
-                      <Button asChild>
-                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                          <GlobeIcon className="mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
-                    </HoverCardTrigger>
-                    <HoverCardContent>
-                      <p>See the deployed project in action</p>
-                    </HoverCardContent>
-                  </HoverCard>
-                )}
-              </CardFooter>
-            </Card>
-          ))}
+                  {project.hasLiveDemo && (
+                    <HoverCard>
+                      <HoverCardTrigger asChild>
+                        <Button asChild>
+                          <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                            <GlobeIcon className="mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      </HoverCardTrigger>
+                      <HoverCardContent>
+                        <p>See the deployed project in action</p>
+                      </HoverCardContent>
+                    </HoverCard>
+                  )}
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
