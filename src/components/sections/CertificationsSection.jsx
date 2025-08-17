@@ -17,7 +17,21 @@ const certifications = [
     issuer: "KG CODING",
     date: "2024",
     credentialUrl:
-      "https://drive.google.com/file/d/1KETqyCSAg8zGaeatB1B4jgNGLcdotnPt/view?usp=drive_link",
+      "https://drive.google.com/file/d/1PEuBKFp3knhplPYxvRXKSpOzKUq1flym/view?usp=drive_link",
+  },
+  {
+    title: "Complete MongoDB Developer Course",
+    issuer: "Udemy",
+    date: "2025",
+    credentialUrl:
+      "https://drive.google.com/file/d/1ge5BlCQpoLcPUbTZ9Y51zehmcQEU6wU7/view?usp=drive_link",
+  },
+  {
+    title: "AI Engineer",
+    issuer: "OneRoadmap",
+    date: "2025",
+    credentialUrl:
+      "https://drive.google.com/file/d/1gdSIAqtY_sJJy4J9LcEQu5UUA6oANk67/view?usp=drive_link",
   },
 ];
 

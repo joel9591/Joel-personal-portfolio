@@ -14,7 +14,7 @@ export default function AboutSection() {
         />
         <meta
           name="keywords"
-          content="Joel J, hey Joel, Joel portfolio, full stack developer, React developer, portfolio website, web developer Bangalore, joel j, Joel, Software Engineer"
+          content="Joel J, hey Joel, Joel portfolio, full stack developer, React developer, portfolio website, web developer Bangalore, joel j, Joel, Software Engineer, joel react developer, top software developer"
         />
         <meta name="author" content="Joel J" />
         <meta name="robots" content="index, follow" />
@@ -65,11 +65,13 @@ export default function AboutSection() {
                 <CardContent className="p-6">
                   <h3 className="mb-4 text-2xl font-semibold">Professional Summary</h3>
                   <p className="mb-4 leading-relaxed text-muted-foreground">
-                    Dynamic and results-driven Full Stack Software Developer with 2 years of
-                    experience in designing and developing high performance, scalable software
-                    solutions. Proficient in React.js, JavaScript (ES6+), Python, Node.js,
-                    Express.js, MySQL, and MongoDB, with expertise in building seamless front-end
-                    and back-end integrations.
+                    Full-Stack Developer with 2.3+ years of experience designing and building
+                    responsive, scalable web applications using JavaScript (ES6+), React.js,
+                    Next.js, Node.js, and Express. Skilled in creating RESTful APIs, managing
+                    databases (MongoDB, MySQL), and delivering end-to-end solutions with clean,
+                    maintainable code. Strong background in front-end architecture, backend
+                    development, and collaboration across cross functional teams to build
+                    high-performance products.
                   </p>
                   <p className="mb-4 leading-relaxed text-muted-foreground">
                     Skilled in Agile development, modern JavaScript frameworks, and responsive

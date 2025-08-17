@@ -10,6 +10,7 @@ const skills = {
     "CSS3",
     "JavaScript (ES6+)",
     "React.js",
+    "Next.js",
     "Redux Toolkit",
     "Context API",
     "React Hooks",
@@ -19,9 +20,9 @@ const skills = {
     "Responsive Design",
     "Mobile-first Design",
   ],
-  backend: ["Node.js", "Express.js", "RESTful APIs", "Client-Server Integration"],
-  languages: ["JavaScript (ES6+)", "Python"],
-  tools: ["Git", "GitHub", "VS Code", "Cursor AI", "Jest", "React Testing Library", "Postman API"],
+  backend: ["Node.js", "Express.js", "RESTful APIs", "Client-Server Integration", "JWT", "OAuth2", "n8n"],
+  languages: ["JavaScript (ES6+)", "Typescript", "Python"],
+  tools: ["Git", "GitHub", "VS Code", "Cursor AI", "Jest", "React Testing Library", "Postman API", "Vercel", "Netlify", "Render", "Contentful CMS"],
   database: ["MySQL", "MongoDB"],
 };
 
@@ -87,36 +88,36 @@ export default function SkillsSection() {
           >
             <Tabs defaultValue="frontend" className="w-full">
               <div className="mb-8 flex justify-center">
-                <TabsList className="flex max-w-4xl flex-wrap justify-center gap-2">
+                <TabsList className="flex max-w-4xl flex-wrap justify-center gap-6">
                   <TabsTrigger
                     value="frontend"
-                    className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                    className="px-3 py-1 text-xs sm:text-sm md:px-8 md:py-1"
                   >
                     Frontend
                   </TabsTrigger>
                   <TabsTrigger
                     value="backend"
-                    className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                    className="px-3 py-1 text-xs sm:text-sm md:px-8 md:py-1"
                   >
                     Backend
                   </TabsTrigger>
                   <TabsTrigger
                     value="database"
-                    className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                    className="px-3 py-1 text-xs sm:text-sm md:px-8 md:py-1"
                   >
                     Database
                   </TabsTrigger>
                   <TabsTrigger
                     value="languages"
-                    className="whitespace-nowrap px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                    className="whitespace-nowrap px-3 py-1 text-xs sm:text-sm md:px-8 md:py-1"
                   >
                     Languages
                   </TabsTrigger>
                   <TabsTrigger
                     value="tools"
-                    className="px-3 py-2 text-xs sm:text-sm md:px-4 md:py-2"
+                    className="px-3 py-1 text-xs sm:text-sm md:px-8 md:py-1"
                   >
-                    Tools
+                    Tools & Development
                   </TabsTrigger>
                 </TabsList>
               </div>

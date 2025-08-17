@@ -10,11 +10,12 @@ const experiences = [
     period: "March 2023 to Present",
     location: "Bengaluru, India",
     responsibilities: [
-      "Developed and optimized key frontend components, including interactive dashboards and user profile page, ensuring seamless frontend-backend integration with React.js, Node.js, and MySQL. Implemented efficient form handling and data storage using well-optimized SQL queries.",
-      "Designed and implemented scalable RESTful APIs to handle complex backend functionalities such as dynamic data processing, cart management, and transaction handling, ensuring efficient client-server communication.",
-      "Led KT sessions for new team members, providing technical walkthroughs, system architecture insights, and best practices to improve onboarding and development efficiency.",
-      "Conducted training sessions for interns, covering Python and AI fundamentals, including libraries such as NumPy, Pandas, TensorFlow, OpenCV, and Matplotlib, fostering hands-on learning experiences.",
-      "Collaborated with clients and internal teams to develop custom full-stack web applications, aligning solutions with business requirements, writing clear documentation, and ensuring high-quality deliverables."
+      "Developed full-stack features for CRM and e-commerce platforms using React.js, Node.js, and Express.",
+      "Designed and implemented secure authentication with JWT and role-based access control.",
+      "Built and integrated RESTful APIs to enable real-time data sync and dynamic workflows.",
+      "Improved frontend performance using Redux Toolkit and optimized backend API response using Redis.",
+      "Created mobile-first dashboards with Tailwind CSS, improving efficiency by 30%.",
+      "Collaborated with backend teams using Postman for testing and API debugging."
     ]
   },
   {

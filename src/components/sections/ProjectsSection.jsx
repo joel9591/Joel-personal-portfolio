@@ -16,6 +16,32 @@ import { Helmet } from "react-helmet";
 
 const projects = [
   {
+    title: "Splits - Expense Sharing App",
+    description:
+      "Full-stack web application to track and split expenses among friends or groups, with Google authentication and payment integration.",
+    technologies: [
+      "Next.js",
+      "MongoDB",
+      "TailwindCSS",
+      "NextAuth (Google OAuth)",
+      "Node.js",
+      "Express",
+      "Mongoose",
+    ],
+    images: ["/projects/splits/1.png","/projects/splits/2.png","/projects/splits/3.png","/projects/splits/4.png","/projects/splits/5.png","/projects/splits/6.png","/projects/splits/7.png","/projects/splits/8.png",],
+    accomplishments: [
+      "Built a responsive full-stack web application where users can create groups, add members, and split expenses equally or partially.",
+      "Integrated Google OAuth authentication using NextAuth for secure login and signup.",
+      "Designed and implemented MongoDB schemas for users, groups, members, and expenses, ensuring efficient data relationships.",
+      "Developed features for group management, expense tracking, and settlement history with real-time updates.",
+      "Implemented a clean, user-friendly interface with TailwindCSS, enhancing usability across devices.",
+      "Deployed application on Vercel, ensuring scalability and production readiness.",
+    ],
+    demoLink: "https://splits-kappa.vercel.app",
+    hasLiveDemo: true,
+    codeLink: "https://github.com/joel9591/Splits",
+  },
+  {
     title: "Thanvi Realty | Realestate website",
     description:
       "A fully responsive real estate website built for Thanvi Realty, showcasing premium properties, services, and contact channels across Bangalore, Hyderabad, and Vizag.",
@@ -158,7 +184,7 @@ export default function ProjectsSection() {
 
           <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project, i) => (
-              <Card key={i} className="overflow-hidden shadow-lg">
+              <Card key={i} className="overflow-hidden shadow-lg h-auto">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
