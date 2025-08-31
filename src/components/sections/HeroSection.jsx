@@ -31,7 +31,7 @@ export default function HeroSection() {
   };
 
   const handleDownloadResume = () => {
-    const resumeUrl = "/resume/Joel-fullStackDev.pdf";
+    const resumeUrl = "/resume/FullStack -Developer-Joel-J.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Joel_resume.pdf";
@@ -149,7 +149,7 @@ export default function HeroSection() {
                 </svg>
               </Button>
               <Button size="lg">
-                <a href="https://drive.google.com/file/d/1QN82Y_BP-ZZmqFbe46nLqvsFE3VtjCWP/view?usp=drive_link">
+                <a href="https://drive.google.com/file/d/1mKCal1Sk7lt5YzQbCVtaWmFSWWcKBWhk/view?usp=drive_link">
                   View Resume
                 </a>
               </Button>
